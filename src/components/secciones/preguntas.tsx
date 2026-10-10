@@ -18,9 +18,9 @@ const reglas = [
 
 export function Preguntas() {
   return (
-    <section id="preguntas" className="papel scroll-mt-14 px-4 py-24">
+    <section id="preguntas" className="papel scroll-mt-14 px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl">
-        <TituloSeccion nota="Lo importante" titulo="Antes de salir" />
+        <TituloSeccion nota="Antes de salir" titulo="¿Cómo prepararse para el finde?" variante="salvia" />
 
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="space-y-6">

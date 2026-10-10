@@ -1,36 +1,47 @@
-// Título reutilizable que usan todas las secciones
+import { cn } from "@/lib/utils"
+
+// Misma estructura y tipografía, con un acento de color por sección.
+const variantes = {
+  simple: "",
+  bordo: "text-[oklch(0.3_0.1_20)]",
+  terracota: "text-terracota",
+  salvia: "text-[oklch(0.42_0.06_150)]",
+}
+
 export function TituloSeccion({
+  id,
   nota,
   titulo,
   bajada,
   oscuro = false,
-  recuadro = false,
+  variante = "simple",
 }: {
+  id?: string
   nota?: string
   titulo: string
   bajada?: string
   oscuro?: boolean // true cuando el fondo de la sección es oscuro
-  recuadro?: boolean // true para resaltar el título dentro de un recuadro bordo
+  variante?: keyof typeof variantes
 }) {
   const textoTitulo = "font-heading text-4xl font-semibold tracking-tight text-balance md:text-5xl"
-
-  // Con recuadro: la nota y el título van juntos dentro de un bloque bordo
-  if (recuadro) {
-    return (
-      <div className="mx-auto mb-12 max-w-2xl text-center">
-        <div className="rounded-[2.5rem] bg-[oklch(0.3_0.1_20)] px-6 py-8 text-crema shadow-2xl sm:px-10 sm:py-10">
-          {nota && <p className="font-hand text-2xl text-[oklch(0.78_0.09_45)]">{nota}</p>}
-          <h2 className={`${nota ? "mt-1" : ""} ${textoTitulo}`}>{titulo}</h2>
-        </div>
-        {bajada && <p className="mt-4 text-lg text-pretty text-muted-foreground">{bajada}</p>}
-      </div>
-    )
-  }
+  const acento = variante !== "simple"
 
   return (
-    <div className="mx-auto mb-12 max-w-2xl text-center">
-      {nota && <p className="font-hand text-2xl text-terracota">{nota}</p>}
-      <h2 className={`${nota ? "mt-1" : ""} ${textoTitulo}`}>{titulo}</h2>
+    <header className="mx-auto mb-8 max-w-2xl text-center">
+      <div>
+        {nota && (
+          <p className={cn("font-hand text-2xl", acento ? variantes[variante] : "text-terracota")}>
+            {nota}
+          </p>
+        )}
+        <h2 id={id} className={cn(
+          acento ? "font-heading text-3xl font-semibold tracking-tight text-balance sm:text-4xl" : textoTitulo,
+          nota && "mt-1"
+        )}>{titulo}</h2>
+        {acento && (
+          <span aria-hidden="true" className="mx-auto mt-3 block h-1 w-10 rounded-full bg-terracota" />
+        )}
+      </div>
       {bajada && (
         <p
           className={`mt-4 text-lg text-pretty ${oscuro ? "text-crema/70" : "text-muted-foreground"}`}
@@ -38,6 +49,6 @@ export function TituloSeccion({
           {bajada}
         </p>
       )}
-    </div>
+    </header>
   )
 }

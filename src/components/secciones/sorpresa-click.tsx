@@ -17,7 +17,7 @@ export function SorpresaClick() {
   }
 
   return (
-    <section id="sorpresa-click" className="scroll-mt-14 bg-muted px-4 py-24">
+    <section id="sorpresa-click" className="scroll-mt-14 bg-muted px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <TituloSeccion
           titulo="Hay un detalle"

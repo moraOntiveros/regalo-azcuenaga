@@ -175,7 +175,7 @@ function Raspadita({
   )
 }
 
-// Una foto raspable más la imagen que aparece a su costado cuando la descubren.
+// Reservamos el espacio de la reacción desde el inicio para evitar movimientos.
 // En compu, la primera imagen sale a la izquierda y la segunda a la derecha;
 // en celular, cada una aparece debajo de su foto.
 function Grupo({
@@ -189,12 +189,14 @@ function Grupo({
   const { reaccion } = foto
 
   return (
-    <div className="flex w-full flex-col items-center gap-8 lg:w-auto lg:min-w-0 lg:flex-row lg:items-start">
+    <div className="flex w-full flex-col items-center gap-8 lg:w-auto lg:min-w-0 lg:flex-row lg:items-start lg:gap-6">
       <Raspadita {...foto} alRevelar={() => setRevelada(true)} />
 
-      {revelada && (
         <figure
-          className={`w-full max-w-[15rem] shrink-0 animate-in bg-white p-2 shadow-2xl delay-500 duration-700 fill-mode-backwards zoom-in-75 sm:p-3 lg:mt-8 lg:w-44 xl:w-60 ${
+          aria-hidden={!revelada}
+          className={`w-full max-w-[15rem] shrink-0 bg-white p-2 shadow-2xl sm:p-3 lg:mt-8 lg:w-44 xl:w-60 ${
+            revelada ? "animate-in delay-500 duration-700 fill-mode-backwards zoom-in-75" : "invisible"
+          } ${
             alLado === "izquierda" ? "lg:order-first" : ""
           }`}
           style={{ rotate: `${reaccion.giro}deg` }}
@@ -208,7 +210,6 @@ function Grupo({
             className="h-auto w-full"
           />
         </figure>
-      )}
     </div>
   )
 }

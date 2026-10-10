@@ -5,6 +5,7 @@ import { LaCasa } from "@/components/secciones/la-casa"
 import { SorpresaClick } from "@/components/secciones/sorpresa-click"
 import { Sorpresa } from "@/components/secciones/sorpresa"
 import { QueHacer } from "@/components/secciones/que-hacer"
+import { DondeComer } from "@/components/secciones/donde-comer"
 import { ComoLlegar } from "@/components/secciones/como-llegar"
 import { Preguntas } from "@/components/secciones/preguntas"
 import { Pie } from "@/components/secciones/pie"
@@ -22,6 +23,7 @@ export default function Home() {
         <SorpresaClick />
         <Sorpresa />
         <QueHacer />
+        <DondeComer />
         <ComoLlegar />
         <Preguntas />
       </main>

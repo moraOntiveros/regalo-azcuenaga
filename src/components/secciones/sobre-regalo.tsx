@@ -46,7 +46,7 @@ export function SobreRegalo() {
 
   return (
     <>
-      <section id="regalo" className="papel relative scroll-mt-14 overflow-hidden px-4 py-24">
+      <section id="regalo" className="papel relative scroll-mt-14 overflow-hidden px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-4xl font-semibold tracking-tight md:text-5xl">
             Su regalo de casamiento

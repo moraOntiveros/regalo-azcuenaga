@@ -17,22 +17,23 @@ export function Galeria() {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:grid-flow-dense">
         {fotos.galeria.map((foto, i) => (
           <button
             key={foto.src}
             onClick={() => setActual(i)}
             className={cn(
               "group relative overflow-hidden rounded-2xl bg-muted",
-              // Algunas fotos más grandes para que la grilla sea más dinámica
-              i === 0 || i === 5 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
+              // La segunda foto grande va a la derecha; las chicas llenan su izquierda.
+              i === 0 || i === 5 ? "col-span-2 row-span-2 aspect-square" : "aspect-square",
+              i === 5 && "md:col-start-3 md:row-start-3"
             )}
           >
             <Image
               src={foto.src}
               alt={foto.alt}
               fill
-              sizes="(min-width: 768px) 25vw, 50vw"
+              sizes={i === 0 || i === 5 ? "(min-width: 1200px) 576px, (min-width: 768px) 50vw, 100vw" : "(min-width: 1200px) 282px, (min-width: 768px) 25vw, 50vw"}
               className={cn(
                 "object-cover transition-transform duration-500 group-hover:scale-105",
                 "pos" in foto && foto.pos

@@ -8,8 +8,9 @@ const links = [
   { href: "#regalo", texto: "El regalo" },
   { href: "#casa", texto: "La casa" },
   { href: "#que-hacer", texto: "Qué hacer" },
+  { href: "#donde-comer", texto: "Dónde comer" },
   { href: "#como-llegar", texto: "Cómo llegar" },
-  { href: "#preguntas", texto: "Preguntas" },
+  { href: "#preguntas", texto: "Cómo prepararse" },
 ]
 
 // Barra de navegación fija arriba de todo.

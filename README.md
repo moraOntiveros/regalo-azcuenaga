@@ -20,6 +20,25 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Font Awesome
+
+The free solid, regular, and brand icon packages and the React component are installed.
+The root layout loads Font Awesome's CSS for every page.
+Import only the icons you use:
+
+```tsx
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGift } from "@fortawesome/free-solid-svg-icons"
+
+export function GiftIcon() {
+  return <FontAwesomeIcon icon={faGift} className="h-5 w-5" />
+}
+```
+
+Regular icons come from `@fortawesome/free-regular-svg-icons`, and brand icons
+come from `@fortawesome/free-brands-svg-icons`.
+See the [Font Awesome React guide](https://docs.fontawesome.com/web/use-with/react/).
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

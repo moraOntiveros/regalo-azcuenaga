@@ -7,9 +7,9 @@ const busqueda = encodeURIComponent("La Negrita Casa de Campo, Azcuénaga, Bueno
 
 export function ComoLlegar() {
   return (
-    <section id="como-llegar" className="scroll-mt-14 px-4 py-24">
+    <section id="como-llegar" className="scroll-mt-14 bg-muted px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl">
-        <TituloSeccion nota="Rumbo al campo" titulo="Cómo llegar" />
+        <TituloSeccion nota="Rumbo al campo" titulo="¿Cómo llegar?" variante="terracota" />
 
         <div className="grid items-stretch gap-6 lg:grid-cols-5">
           <div className="space-y-4 lg:col-span-2">

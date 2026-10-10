@@ -70,10 +70,8 @@ export const casa = {
 // ------------------------------------------------------------
 export const fotos = {
   galeria: [
+    // Exterior: frente, galería, pileta y atardecer.
     { src: "/fotos/casa/frente.jpg", alt: "El frente de la casa con su galería" },
-    { src: "/fotos/casa/living.webp", alt: "El living con hogar central" },
-    { src: "/fotos/casa/cocina.webp", alt: "La cocina con horno de barro" },
-    { src: "/fotos/casa/comedor.webp", alt: "El comedor" },
     { src: "/fotos/casa/reposeras.webp", alt: "Reposeras bajo la galería, con vista a la pileta" },
     // "pos" elige qué parte de la foto se ve cuando hay que recortarla
     {
@@ -81,10 +79,14 @@ export const fotos = {
       alt: "La pileta en medio del campo",
       pos: "object-[65%_60%]",
     },
-    { src: "/fotos/casa/dormitorio-azul.webp", alt: "Dormitorio principal" },
-    { src: "/fotos/casa/bano.webp", alt: "Baño con bañera de patas" },
-    { src: "/fotos/casa/dormitorio-verde.webp", alt: "Dormitorio con hogar" },
     { src: "/fotos/casa/atardecer-pileta.jpg", alt: "Atardecer sobre la pileta" },
+    // Interior: espacios comunes, dormitorios y baño.
+    { src: "/fotos/casa/cocina.webp", alt: "La cocina con horno de barro" },
+    { src: "/fotos/casa/living.webp", alt: "El living con hogar central" },
+    { src: "/fotos/casa/comedor.webp", alt: "El comedor" },
+    { src: "/fotos/casa/dormitorio-azul.webp", alt: "Dormitorio principal" },
+    { src: "/fotos/casa/dormitorio-verde.webp", alt: "Dormitorio con hogar" },
+    { src: "/fotos/casa/bano.webp", alt: "Baño con bañera de patas" },
   ],
 }
 
@@ -128,73 +130,104 @@ export const itinerario = [
 // ------------------------------------------------------------
 //  Qué hacer
 // ------------------------------------------------------------
-// Cada actividad lleva un emoji o una imagen (imagen: ruta en /public) y, opcionalmente, un texto.
+// Cada actividad lleva un icono de Font Awesome, un título y una descripción.
+export type IconoActividad =
+  | "descanso"
+  | "videojuegos"
+  | "pool"
+  | "pelis"
+  | "mesa"
+  | "asado"
+  | "charla"
+  | "pueblo"
+
 export const actividades: {
-  emoji?: string
-  imagen?: string
-  // cover recorta la foto para llenar un cuadrado; contain la muestra entera dentro del cuadrado;
-  // entera la muestra completa y rectangular (hay que indicar ancho y alto de la imagen)
-  ajuste?: "cover" | "contain" | "entera"
-  ancho?: number
-  alto?: number
-  altura?: string // con "entera", alto en pantalla (por defecto "h-16"; ej: "h-24" para más grande)
-  pos?: string // con cover, qué parte de la foto se ve (ej: "object-top")
+  icono: IconoActividad
   titulo: string
-  texto?: string
+  texto: string
 }[] = [
-  { imagen: "/fotos/actividades/mimir.webp", ajuste: "cover", titulo: "Mimir" },
-  { imagen: "/fotos/actividades/mario.webp", ajuste: "contain", titulo: "Jugar al Mario Kart y Mario Party" },
   {
-    imagen: "https://image.api.playstation.com/vulcan/ap/rnd/202607/2321/c7c534e1e9b24ccf7ff11c429948f31494ccce402b452647.png",
-    ajuste: "contain",
-    titulo: "Jugar al FIFA",
-  },
-  { imagen: "/fotos/actividades/pool.jpg", ajuste: "cover", pos: "object-[50%_30%]", titulo: "Jugar al pool" },
-  {
-    imagen: "/fotos/actividades/pelis.jpg",
-    ajuste: "entera",
-    ancho: 585,
-    alto: 330,
-    titulo: "Mirar pelis",
+    icono: "descanso",
+    titulo: "Mimir",
+    texto: "Sin alarma y con permiso para cinco minutitos más.",
   },
   {
-    imagen: "/fotos/actividades/juegos.webp",
-    ajuste: "entera",
-    ancho: 1200,
-    alto: 800,
-    titulo: "Llevar juegos de mesa",
+    icono: "videojuegos",
+    titulo: "Videojuegos",
+    texto: "Mario Kart, Mario Party, FIFA, entre otros.",
   },
   {
-    imagen: "/fotos/actividades/asado.jpg",
-    ajuste: "entera",
-    ancho: 474,
-    alto: 563,
-    altura: "h-24",
-    titulo: "Hacer muchos asados",
+    icono: "pool",
+    titulo: "Pool",
+    texto: "Una mesa, dos equipos y alguna carambola de pura suerte.",
   },
-  { imagen: "/fotos/actividades/chisme.jpg", ajuste: "cover", titulo: "Chismosear" },
+  {
+    icono: "pelis",
+    titulo: "Maratón de pelis",
+    texto: "Una buena peli y algo rico para picar.",
+  },
+  {
+    icono: "mesa",
+    titulo: "Juegos de mesa",
+    texto: "Traigan sus favoritos; las reglas se discuten acá.",
+  },
+  {
+    icono: "asado",
+    titulo: "Asado sin apuro",
+    texto: "El fuego marca el ritmo y la sobremesa se estira.",
+  },
+  {
+    icono: "charla",
+    titulo: "Chismosear",
+    texto: "Tiempo de sobra para ponerse al día, con lujo de detalles.",
+  },
+  {
+    icono: "pueblo",
+    titulo: "Conocer Azcuénaga",
+    texto: "Una escapada al pueblo para caminar y cambiar de aire.",
+  },
 ]
 
 export const restaurantes = [
   {
     nombre: "La Porteña",
     tipo: "Pastas caseras",
-    texto: "Casa de familia, porciones enormes. Ravioles, ñoquis, malfatti y un ossobuco famoso.",
+    texto: "Pastas caseras y sabores de casa en un ambiente familiar. Una parada para comer rico y disfrutar de la sobremesa.",
+    instagram: "https://www.instagram.com/laportenarestaurante/",
+    foto: "/fotos/restaurantes/la-portena.webp",
+    fotoAlt: "Postres caseros con helado servidos en La Porteña",
+    fotoCredito: "Restaurant Guru",
+    fotoFuente: "https://es.restaurantguru.com/Restaurante-La-Portena-Buenos-Aires",
   },
   {
     nombre: "Almacén CT & Cía",
     tipo: "Parrilla y picadas",
-    texto: "En un almacén de 1912. Fiambres, quesos y carnes a la parrilla.",
+    texto: "Parrilla, picadas y cocina de campo en un antiguo almacén. Mesas entre recuerdos y detalles que cuentan la historia del pueblo.",
+    instagram: "https://www.instagram.com/elalmacenct/",
+    foto: "/fotos/restaurantes/almacen-ct.webp",
+    fotoAlt: "Salón de Almacén CT & Cía, con paredes de ladrillo y mesas de colores",
+    fotoCredito: "Almacén CT & Cía",
+    fotoFuente: "https://www.almacenct.com/",
   },
   {
     nombre: "Le Four",
     tipo: "Cocina francesa",
-    texto: "Un toque de Francia en medio del campo bonaerense.",
+    texto: "Cocina de inspiración francesa en el campo bonaerense. Una propuesta para probar otros sabores y comer sin apuro.",
+    instagram: "https://www.instagram.com/lefourazcuenaga/",
+    foto: "/fotos/restaurantes/le-four.webp",
+    fotoAlt: "Selección de quesos servida en Le Four",
+    fotoCredito: "Xavier Martín · LA NACION",
+    fotoFuente: "https://www.lanacion.com.ar/revista-lugares/sebastien-fouillade-el-chef-frances-que-abrio-un-restaurante-de-campo-y-es-furor-en-azcuenaga-nid18022023/",
   },
   {
     nombre: "Club Apolo",
     tipo: "Buffet de club",
-    texto: "El clásico del pueblo y el único que abre todos los días.",
+    texto: "El buffet del club, un clásico de Azcuénaga. Un lugar de encuentro con espíritu de pueblo para hacer una pausa y compartir la mesa.",
+    instagram: "https://www.instagram.com/clubrecreativoapolo/",
+    foto: "/fotos/restaurantes/club-apolo.webp",
+    fotoAlt: "Fachada del Club Recreativo Apolo junto a su parque arbolado",
+    fotoCredito: "Bafilma · Provincia de Buenos Aires",
+    fotoFuente: "https://bafilma.gba.gob.ar/locaciones/azcuenaga/club-recreativo-apolo",
   },
 ]
 
