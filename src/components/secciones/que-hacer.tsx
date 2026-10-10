@@ -30,7 +30,7 @@ export function QueHacer() {
                     a.ajuste === "entera"
                       ? `${a.altura ?? "h-16"} w-auto rounded-2xl`
                       : a.ajuste === "contain"
-                        ? "size-16 object-contain"
+                        ? "size-16 rounded-2xl object-contain"
                         : `size-16 rounded-2xl object-cover ${a.pos ?? ""}`
                   }
                 />

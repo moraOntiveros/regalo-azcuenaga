@@ -18,6 +18,7 @@ export function Portada({ fondo = "oklch(0.3 0.1 20)" }: { fondo?: string }) {
       <PostIt
         src="/fotos/boda-novios.jpg"
         alt="Novios sonriendo el día de su casamiento"
+        loading="eager"
         className="order-1 -rotate-6 sm:top-20 sm:left-6 lg:top-24 lg:left-12"
         ancho="aspect-[2/3]"
         tam="vertical"
@@ -88,6 +89,7 @@ function PostIt({
   ancho,
   tam = "horizontal",
   recorte = "object-center",
+  loading = "lazy",
 }: {
   src: string
   alt: string
@@ -96,6 +98,7 @@ function PostIt({
   ancho: string
   tam?: "vertical" | "horizontal" // define cuánto ancho ocupa la foto
   recorte?: string // qué parte de la foto se ve cuando hay que recortarla
+  loading?: "eager" | "lazy"
 }) {
   return (
     <figure
@@ -106,7 +109,7 @@ function PostIt({
       {/* Cinta */}
       <span className="absolute -top-3 left-1/2 h-5 w-14 -translate-x-1/2 rotate-2 bg-amber-200/80 shadow-sm sm:h-6 sm:w-20" />
       <div className={`relative w-full overflow-hidden ${ancho}`}>
-        <Image src={src} alt={alt} fill sizes="288px" className={`object-cover ${recorte}`} />
+        <Image src={src} alt={alt} fill sizes="288px" loading={loading} className={`object-cover ${recorte}`} />
       </div>
       {nota && (
         <figcaption className="mt-1.5 text-center font-hand text-sm leading-tight text-tierra sm:text-lg lg:text-2xl">

@@ -143,8 +143,12 @@ export const actividades: {
   texto?: string
 }[] = [
   { imagen: "/fotos/actividades/mimir.webp", ajuste: "cover", titulo: "Mimir" },
-  { imagen: "/fotos/actividades/mario.webp", ajuste: "contain", titulo: "Jugar al Mario Party" },
-  { imagen: "/fotos/actividades/kart.png", ajuste: "contain", titulo: "Jugar al Mario Cars" },
+  { imagen: "/fotos/actividades/mario.webp", ajuste: "contain", titulo: "Jugar al Mario Kart y Mario Party" },
+  {
+    imagen: "https://image.api.playstation.com/vulcan/ap/rnd/202607/2321/c7c534e1e9b24ccf7ff11c429948f31494ccce402b452647.png",
+    ajuste: "contain",
+    titulo: "Jugar al FIFA",
+  },
   { imagen: "/fotos/actividades/pool.jpg", ajuste: "cover", pos: "object-[50%_30%]", titulo: "Jugar al pool" },
   {
     imagen: "/fotos/actividades/pelis.jpg",
