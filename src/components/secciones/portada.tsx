@@ -3,65 +3,66 @@ import { ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { regalo } from "@/data/regalo"
 
-// La primera pantalla: fondo liso, dos "post-its" con fotos en las esquinas
-// y el saludo a los novios en el centro.
+// La portada mantiene las fotos y el saludo dentro de un área centrada.
 export function Portada({ fondo = "oklch(0.3 0.1 20)" }: { fondo?: string }) {
   const [n1, n2] = regalo.novios
 
   return (
     <section
       id="inicio"
-      className="relative grid min-h-svh grid-cols-2 content-center items-center justify-items-center gap-x-3 gap-y-6 overflow-hidden px-4 pt-[4.75rem] pb-12 sm:flex sm:items-center sm:justify-center sm:gap-0 sm:px-4 sm:pt-14 sm:pb-0"
+      className="relative flex min-h-svh items-center justify-center overflow-hidden px-4 pt-[4.75rem] pb-12 sm:pt-14 sm:pb-0"
       style={{ backgroundColor: fondo }}
     >
-      {/* Post-it de arriba a la izquierda */}
-      <PostIt
-        src="/fotos/boda-novios.jpg"
-        alt="Novios sonriendo el día de su casamiento"
-        loading="eager"
-        className="order-1 -rotate-6 sm:top-20 sm:left-6 lg:top-24 lg:left-12"
-        ancho="aspect-[2/3]"
-        tam="vertical"
-      />
+      <div className="relative grid w-full max-w-[90rem] grid-cols-2 content-center items-center justify-items-center gap-x-3 gap-y-6 sm:flex sm:h-[min(52rem,calc(100svh-3.5rem))] sm:min-h-[38rem] sm:items-center sm:justify-center sm:gap-0">
+        {/* Post-it de arriba a la izquierda */}
+        <PostIt
+          src="/fotos/boda-novios.jpg"
+          alt="Novios sonriendo el día de su casamiento"
+          loading="eager"
+          className="order-1 -rotate-6 sm:top-8 sm:left-6 lg:top-10 lg:left-12"
+          ancho="aspect-[2/3]"
+          tam="vertical"
+        />
 
-      {/* Post-it de abajo a la derecha */}
-      <PostIt
-        src="/fotos/elvis.jpg"
-        alt="Novios riendo bajo una lluvia de arroz"
-        className="order-4 rotate-4 sm:right-6 sm:bottom-16 lg:right-12 lg:bottom-14"
-        ancho="aspect-[4/3] sm:aspect-video"
-        recorte="object-[50%_25%]"
-      />
+        {/* Post-it de abajo a la derecha */}
+        <PostIt
+          src="/fotos/elvis.jpg"
+          alt="Novios riendo bajo una lluvia de arroz"
+          className="order-4 rotate-4 sm:right-6 sm:bottom-10 lg:right-12"
+          ancho="aspect-[4/3] sm:aspect-video"
+          recorte="object-[50%_25%]"
+        />
 
-      {/* Post-it de arriba a la derecha (foto vertical) */}
-      <PostIt
-        src="/fotos/madonna.avif"
-        alt="Novios abrazados el día de su casamiento"
-        className="order-1 rotate-5 sm:top-20 sm:right-6 lg:top-24 lg:right-12"
-        ancho="aspect-[2/3]"
-        tam="vertical"
-      />
+        {/* Post-it de arriba a la derecha (foto vertical) */}
+        <PostIt
+          src="/fotos/madonna.avif"
+          alt="Novios abrazados el día de su casamiento"
+          className="order-1 rotate-5 sm:top-8 sm:right-6 lg:top-10 lg:right-12"
+          ancho="aspect-[2/3]"
+          tam="vertical"
+        />
 
-      {/* Post-it de abajo a la izquierda */}
-      <PostIt
-        src="/fotos/boda-clasica.jpg"
-        alt="Novia dándole un beso a su novio en la mesa del casamiento"
-        className="order-3 -rotate-3 sm:bottom-16 sm:left-6 lg:bottom-14 lg:left-12"
-        ancho="aspect-[4/3] sm:aspect-video"
-      />
+        {/* Post-it de abajo a la izquierda */}
+        <PostIt
+          src="/fotos/boda-clasica.jpg"
+          alt="Novia dándole un beso a su novio en la mesa del casamiento"
+          className="order-3 -rotate-3 sm:bottom-10 sm:left-6 lg:left-12"
+          ancho="aspect-[4/3] sm:aspect-video"
+        />
 
-      <div className="relative z-10 order-2 col-span-2 text-center text-crema sm:order-none sm:col-span-1">
-        <p className="font-hand text-2xl text-[oklch(0.78_0.09_45)] sm:text-3xl md:text-4xl">¡Felicitaciones!</p>
-        <h1 className="mt-2 font-heading text-4xl font-semibold tracking-tight text-balance sm:text-6xl md:text-7xl xl:text-8xl">
-          {n1} <span className="text-[oklch(0.78_0.09_45)]">&</span> {n2}
-        </h1>
-        <p className="mx-auto mt-4 max-w-3xl font-heading text-sm text-balance text-crema/85 sm:mt-6 sm:text-base md:text-xl">
-          Ya se casaron, ya bailaron, ya saludaron a todos los tíos.
-        </p>
-        <p className="mt-2 font-hand text-2xl sm:mt-3 sm:text-3xl md:text-4xl">Ahora se vienen cositas</p>
-        <Button asChild size="lg" className="mt-6 h-10 rounded-full bg-crema px-6 text-sm sm:mt-10 sm:h-12 sm:px-8 sm:text-base shadow-lg hover:bg-white" style={{ color: fondo }}>
-          <a href="#regalo">🎁 Nuestro regalo</a>
-        </Button>
+        <div className="relative z-10 order-2 col-span-2 text-center text-crema sm:order-none sm:col-span-1">
+          <p className="font-hand text-2xl text-[oklch(0.78_0.09_45)] sm:text-3xl md:text-4xl">¡Felicitaciones!</p>
+          <h1 className="mt-2 font-heading text-4xl font-semibold tracking-tight text-balance sm:text-6xl md:text-7xl xl:text-8xl">
+            {n1} <span className="text-[oklch(0.78_0.09_45)]">&</span> {n2}
+          </h1>
+          <p className="mx-auto mt-4 max-w-3xl font-heading text-sm text-balance text-crema/85 sm:mt-6 sm:text-base md:text-xl">
+            Ya se casaron, ya bailaron, ya saludaron a todos los tíos.
+          </p>
+          <p className="mt-2 font-hand text-2xl sm:mt-3 sm:text-3xl md:text-4xl">Ahora se vienen cositas</p>
+          <Button asChild size="lg" className="mt-6 h-10 rounded-full bg-crema px-6 text-sm sm:mt-10 sm:h-12 sm:px-8 sm:text-base shadow-lg hover:bg-white" style={{ color: fondo }}>
+            <a href="#regalo">🎁 Nuestro regalo</a>
+          </Button>
+        </div>
       </div>
 
       <a
