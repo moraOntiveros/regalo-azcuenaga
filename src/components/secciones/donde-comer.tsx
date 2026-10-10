@@ -3,7 +3,7 @@ import { TituloSeccion } from "./titulo-seccion"
 
 export function DondeComer() {
   return (
-    <section id="donde-comer" aria-labelledby="restaurantes-titulo" className="papel scroll-mt-14 px-4 py-12 sm:py-16">
+    <section id="donde-comer" aria-labelledby="restaurantes-titulo" className="papel scroll-mt-16 px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <TituloSeccion
           id="restaurantes-titulo"

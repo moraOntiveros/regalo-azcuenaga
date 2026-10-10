@@ -5,7 +5,7 @@ export function LaCasa() {
   return (
     <section
       id="casa"
-      className="scroll-mt-14 bg-[oklch(0.3_0.1_20)] px-4 py-12 sm:py-16 text-crema"
+      className="scroll-mt-16 bg-[oklch(0.3_0.1_20)] px-4 py-12 sm:py-16 text-crema"
     >
       <div className="mx-auto max-w-6xl">
         <TituloSeccion

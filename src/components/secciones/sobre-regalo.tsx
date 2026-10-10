@@ -5,7 +5,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import confetti from "canvas-confetti"
-import { MapPin, CalendarHeart, Users, Sparkles } from "lucide-react"
+import { MapPin, CalendarHeart, Users, Sparkles, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { regalo } from "@/data/regalo"
 import { fechaCorta, fechaLarga } from "@/lib/fechas"
@@ -46,14 +46,14 @@ export function SobreRegalo() {
 
   return (
     <>
-      <section id="regalo" className="papel relative scroll-mt-14 overflow-hidden px-4 py-12 sm:py-16">
+      <section id="regalo" className={`papel relative flex min-h-[calc(100svh-4rem)] scroll-mt-16 flex-col justify-center overflow-hidden px-4 ${abierto ? "py-8 lg:py-4" : "py-12 sm:py-16"}`}>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-4xl font-semibold tracking-tight md:text-5xl">
             Su regalo de casamiento
           </h2>
         </div>
 
-        <div className={`mx-auto mt-12 ${abierto ? "max-w-5xl" : "max-w-xl"}`}>
+        <div className={`mx-auto mt-12 w-full ${abierto ? "max-w-5xl" : "max-w-xl"}`}>
           {!abierto ? (
             // ✉️ EL SOBRE CERRADO
             <button
@@ -136,14 +136,14 @@ export function SobreRegalo() {
                 </div>
 
                 {regalo.fechaDefinida && (
-                  <p className="mt-6 text-center text-muted-foreground">
+                  <p className="mt-6 text-center text-muted-foreground lg:mt-3">
                     Check-in el{" "}
                     <strong className="text-foreground">{fechaLarga(regalo.checkIn)}</strong> a las{" "}
                     {regalo.horaCheckIn} hs
                   </p>
                 )}
 
-                <div className="mt-4 text-center">
+                <div className="mt-4 text-center lg:mt-2">
                   <Button variant="ghost" size="sm" onClick={abrir}>
                     Más confeti 🎉
                   </Button>
@@ -163,10 +163,22 @@ export function SobreRegalo() {
               </figure>
             </div>
           )}
+          {abierto && regalo.fechaDefinida && (
+            <div className="mt-12">
+              <CuentaRegresiva fecha={regalo.checkIn} hora={regalo.horaCheckIn} />
+            </div>
+          )}
         </div>
+        {abierto && (
+          <a
+            href="#sorpresa-click"
+            aria-label="Continuar a Hay un detalle"
+            className="mx-auto mt-8 flex size-12 items-center justify-center rounded-full text-foreground/70 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+          >
+            <ChevronDown aria-hidden="true" className="size-8 motion-safe:animate-bounce" />
+          </a>
+        )}
       </section>
-
-      {regalo.fechaDefinida && <CuentaRegresiva fecha={regalo.checkIn} hora={regalo.horaCheckIn} />}
     </>
   )
 }

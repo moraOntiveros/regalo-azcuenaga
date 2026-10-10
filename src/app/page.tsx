@@ -19,9 +19,9 @@ export default function Home() {
       <main>
         <Portada />
         <SobreRegalo />
-        <LaCasa />
         <SorpresaClick />
         <Sorpresa />
+        <LaCasa />
         <QueHacer />
         <DondeComer />
         <ComoLlegar />

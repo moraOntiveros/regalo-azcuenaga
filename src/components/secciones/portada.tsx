@@ -10,10 +10,10 @@ export function Portada({ fondo = "oklch(0.3 0.1 20)" }: { fondo?: string }) {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-svh items-center justify-center overflow-hidden px-4 pt-[4.75rem] pb-12 sm:pt-14 sm:pb-0"
+      className="relative flex min-h-svh items-center justify-center overflow-hidden px-4 pt-[5.25rem] pb-12 sm:pt-16 sm:pb-0"
       style={{ backgroundColor: fondo }}
     >
-      <div className="relative grid w-full max-w-[90rem] grid-cols-2 content-center items-center justify-items-center gap-x-3 gap-y-6 sm:flex sm:h-[min(52rem,calc(100svh-3.5rem))] sm:min-h-[38rem] sm:items-center sm:justify-center sm:gap-0">
+      <div className="relative grid w-full max-w-[90rem] grid-cols-2 content-center items-center justify-items-center gap-x-3 gap-y-6 sm:flex sm:h-[min(52rem,calc(100svh-4rem))] sm:min-h-[38rem] sm:items-center sm:justify-center sm:gap-0">
         {/* Post-it de arriba a la izquierda */}
         <PostIt
           src="/fotos/boda-novios.jpg"

@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faHourglassHalf } from "@fortawesome/free-solid-svg-icons"
 
 // Reloj que cuenta los días/horas/minutos/segundos que faltan
 export function CuentaRegresiva({ fecha, hora }: { fecha: string; hora: string }) {
@@ -27,22 +29,30 @@ export function CuentaRegresiva({ fecha, hora }: { fecha: string; hora: string }
 
   // Bloque propio, con el color de la portada y esquinas redondeadas
   return (
-    <section className="px-4 pb-16 text-center">
-      <div className="mx-auto max-w-2xl rounded-[2.5rem] bg-[oklch(0.3_0.1_20)] px-6 py-10 text-crema shadow-2xl sm:px-10">
-        <p className="font-hand text-4xl text-[oklch(0.78_0.09_45)] md:text-5xl">
-          {ahora !== null && resta === 0 ? "¡Ya es hora! A disfrutar 🎉" : "Faltan"}
-        </p>
-        <div className="mx-auto mt-6 grid max-w-xl grid-cols-4 gap-3">
+    <div role="timer" aria-label="Cuenta regresiva para el viaje" className="text-center">
+      <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 rounded-3xl bg-[oklch(0.3_0.1_20)] px-4 py-5 text-crema shadow-xl sm:flex-row sm:gap-8 sm:px-8 sm:py-6">
+        <div className="sm:w-40 sm:shrink-0 sm:text-left">
+          <div className="flex items-center justify-center gap-3 text-[oklch(0.78_0.09_45)] sm:justify-start">
+            <FontAwesomeIcon icon={faHourglassHalf} aria-hidden="true" className="size-4! shrink-0" />
+            <p className="font-hand text-3xl leading-none sm:text-4xl">
+              {ahora !== null && resta === 0 ? "¡Ya es hora! A disfrutar 🎉" : "Faltan"}
+            </p>
+          </div>
+          {!(ahora !== null && resta === 0) && (
+            <p className="mt-2 text-xs text-crema/70 sm:text-sm">para el finde en el campo</p>
+          )}
+        </div>
+        <div className="grid w-full min-w-0 grid-cols-4 gap-2 sm:flex-1 sm:gap-3">
           {partes.map((p) => (
-            <div key={p.texto} className="rounded-2xl bg-crema/10 py-4 ring-1 ring-crema/20">
-              <p className="font-heading text-4xl font-semibold tabular-nums md:text-5xl">
+            <div key={p.texto} className="min-w-0 rounded-2xl border border-crema/15 bg-crema/5 px-1 py-3">
+              <p className="font-heading text-3xl leading-none font-semibold tracking-tight tabular-nums md:text-5xl">
                 {ahora === null ? "–" : p.valor}
               </p>
-              <p className="mt-1 text-xs tracking-widest text-crema/70 uppercase">{p.texto}</p>
+              <p className="mt-2 text-[10px] font-medium tracking-[0.16em] text-crema/65 uppercase sm:text-xs">{p.texto}</p>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   )
 }

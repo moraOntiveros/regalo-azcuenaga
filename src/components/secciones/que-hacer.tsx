@@ -26,7 +26,7 @@ const iconosActividad = {
 
 export function QueHacer() {
   return (
-    <section id="que-hacer" className="scroll-mt-14 bg-muted px-4 py-12 sm:py-16">
+    <section id="que-hacer" className="scroll-mt-16 bg-muted px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <TituloSeccion nota="Ideas para el finde" titulo="¿Qué se puede hacer?" variante="bordo" />
 

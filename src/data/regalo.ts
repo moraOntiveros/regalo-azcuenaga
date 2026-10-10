@@ -235,15 +235,15 @@ export const restaurantes = [
 //  Checklist de la valija
 // ------------------------------------------------------------
 export const valija = [
-  "Malla y ojotas",
-  "Protector solar",
-  "Repelente (el campo tiene sus habitantes)",
-  "Un buzo para la noche",
-  "Mate, termo y yerba",
-  "Vino o vermú",
-  "Parlante y una buena playlist",
-  "Juegos de cartas",
-  "Ganas de no hacer nada",
+  { id: "malla-ojotas", texto: "Malla y ojotas" },
+  { id: "protector-solar", texto: "Protector solar" },
+  { id: "repelente", texto: "Repelente para insectos" },
+  { id: "buzo", texto: "Un buzo para la noche" },
+  { id: "mate", texto: "Mate, termo y yerba" },
+  { id: "vino-vermu", texto: "Vino o vermú" },
+  { id: "parlante-playlist", texto: "Parlante y una buena playlist" },
+  { id: "cartas", texto: "Juegos de cartas" },
+  { id: "descanso", texto: "Ganas de no hacer nada" },
 ]
 
 // ------------------------------------------------------------
@@ -252,7 +252,7 @@ export const valija = [
 export const preguntas = [
   {
     p: "¿Qué incluye el regalo?",
-    r: "Cuatro noches en La Negrita, toda la casa para ustedes: 2 dormitorios, 2 baños, cocina equipada, pileta, quincho y parque.",
+    r: "Cuatro noches en La Negrita para compartir el finde juntos: 2 dormitorios, 2 baños, cocina equipada, pileta, quincho y parque.",
   },
   {
     p: "¿Hay que llevar comida?",
@@ -261,10 +261,6 @@ export const preguntas = [
   {
     p: "¿Hay wifi?",
     r: "Sí, hay wifi gratis. Pero la idea es que lo usen poco 😉",
-  },
-  {
-    p: "¿Podemos llevar a la mascota?",
-    r: "¡Sí! La casa acepta mascotas.",
   },
   {
     p: "¿Dónde dejamos el auto?",
