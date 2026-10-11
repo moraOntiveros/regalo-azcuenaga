@@ -234,6 +234,72 @@ export const restaurantes = [
 // ------------------------------------------------------------
 //  Checklist de la valija
 // ------------------------------------------------------------
+// Pueblos cercanos para visitar (sección "Mejor que 2 son 3").
+// Las distancias son aproximadas, en auto desde Azcuénaga; los caminos de tierra pueden demorar más.
+export const pueblos = [
+  {
+    icono: "/fotos/pueblos/areco.png",
+    nombre: "San Antonio de Areco",
+    distancia: "A unos 20 km de Azcuénaga (30 min en auto)",
+    texto:
+      "La capital de la tradición gaucha: Puente Viejo, Museo Gauchesco Ricardo Güiraldes y talleres de plateros y artesanos",
+    mapa: "San Antonio de Areco, Buenos Aires",
+  },
+  {
+    icono: "/fotos/pueblos/giles.png",
+    nombre: "San Andrés de Giles",
+    distancia: "A unos 13 km de Azcuénaga (15 min en auto)",
+    texto:
+      "La cabecera del partido: plaza principal, la vieja estación de tren y un parque ideal para un picnic.",
+    mapa: "San Andrés de Giles, Buenos Aires",
+  },
+  {
+    icono: "/fotos/pueblos/keen.png",
+    nombre: "Carlos Keen",
+    distancia: "A unos 25 km de Azcuénaga (35 min en auto)",
+    texto:
+      "Un pueblo histórico donde los viejos almacenes de ramos generales son hoy restaurantes de campo. Los fines de semana hay feria artesanal.",
+    mapa: "Carlos Keen, Buenos Aires",
+  },
+]
+
+// Sección final "Un plus": enlaces extra (nota de prensa y playlist)
+export const plus: {
+  icono: "nota" | "musica"
+  titulo: string
+  texto: string
+  imagen?: string // imagen de vista previa (ruta o link)
+  ancho?: number
+  alto?: number
+  alt?: string
+  embed?: string // reproductor incrustado (tiene prioridad sobre la imagen)
+  boton: string
+  url: string
+}[] = [
+  {
+    icono: "nota",
+    titulo: "La Negrita Casa de Campo en Infobae",
+    texto: "Una nota sobre Azcuénaga, el pueblo rural a una hora y media de CABA, donde aparece La Negrita.",
+    // Imagen de vista previa de la nota (la publica Infobae)
+    imagen:
+      "https://www.infobae.com/resizer/v2/7ACDRL3YIBFGHAVD3WLDET7FS4.jpg?auth=6a232247b0d3cfdbbdc38498ce0c8c0c28abe5fa2ca23826311013b767d860d6&smart=true&width=1200&height=630&quality=85",
+    ancho: 1200,
+    alto: 630,
+    alt: "Vista previa de la nota de Infobae",
+    boton: "Leer la nota",
+    url: "https://www.infobae.com/sociedad/2026/10/09/tiene-menos-de-400-habitantes-y-recibe-turistas-todo-el-anos-el-pueblo-rural-a-una-hora-y-media-de-caba-ideal-para-visitar-el-feriado-del-12-de-octubre/",
+  },
+  {
+    icono: "musica",
+    titulo: "Para aclimatarse",
+    texto: "Escuchá esta playlist: Asado y Folklore.",
+    // Reproductor de Spotify incrustado: permite deslizar para ver todos los temas
+    embed: "https://open.spotify.com/embed/playlist/37i9dQZF1DWYNxOHelieem?utm_source=generator&theme=0",
+    boton: "Abrir en Spotify",
+    url: "https://open.spotify.com/playlist/37i9dQZF1DWYNxOHelieem",
+  },
+]
+
 export const valija = [
   { id: "malla-ojotas", texto: "Malla y ojotas" },
   { id: "protector-solar", texto: "Protector solar" },
@@ -256,11 +322,11 @@ export const preguntas = [
   },
   {
     p: "¿Hay que llevar comida?",
-    r: "La casa tiene cocina completa. Pueden llevar cosas o comprar en los almacenes del pueblo. Si quieren comer afuera, reserven con anticipación porque los restaurantes se llenan.",
+    r: "La casa tiene cocina completa. Podemos llevar cosas o comprar en los almacenes del pueblo. Si queremos comer afuera, reservemos con anticipación porque los restaurantes se llenan.",
   },
   {
     p: "¿Hay wifi?",
-    r: "Sí, hay wifi gratis. Pero la idea es que lo usen poco 😉",
+    r: "Sí, hay wifi gratis. Pero la idea es que lo usemos poco 😉",
   },
   {
     p: "¿Dónde dejamos el auto?",

@@ -19,10 +19,7 @@ export function SorpresaClick() {
   return (
     <section id="sorpresa-click" className="scroll-mt-16 bg-muted px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl">
-        <TituloSeccion
-          titulo="Hay un detalle"
-          bajada={abierta ? "¡Nosotros, Mora y tu hermano, también viajamos!" : "Tocá para descubrir"}
-        />
+        <TituloSeccion titulo="Hay un detalle" />
 
         {!abierta ? (
           <button
@@ -34,28 +31,34 @@ export function SorpresaClick() {
             <span className="font-hand text-4xl">Tocá acá</span>
           </button>
         ) : (
-          <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-center">
-            <figure className="w-full max-w-sm shrink-0 -rotate-3 animate-in bg-white p-2 shadow-2xl duration-700 fade-in zoom-in-75 sm:p-3 lg:w-[22rem]">
-              <Image
-                src="/fotos/sorpresa2/tenemos.webp"
-                alt="Meme de un conejo que dice: Tenemos"
-                width={959}
-                height={780}
-                unoptimized
-                className="h-auto w-full"
-              />
-            </figure>
-            <figure className="w-full max-w-xl shrink-0 rotate-2 animate-in bg-white p-2 shadow-2xl delay-700 duration-700 fill-mode-backwards fade-in zoom-in-75 sm:p-3 lg:w-[30rem] lg:mt-8">
-              <Image
-                src="/fotos/sorpresa2/pareja.jpg"
-                alt="Abril y Gonza abrazados"
-                width={1600}
-                height={900}
-                unoptimized
-                className="h-auto w-full"
-              />
-            </figure>
-          </div>
+          <>
+            <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-center">
+              <figure className="w-full max-w-sm shrink-0 -rotate-3 animate-in bg-white p-2 shadow-2xl duration-700 fade-in zoom-in-75 sm:p-3 lg:w-[22rem]">
+                <Image
+                  src="/fotos/sorpresa2/tenemos.webp"
+                  alt="Meme de un conejo que dice: Tenemos"
+                  width={959}
+                  height={780}
+                  unoptimized
+                  className="h-auto w-full"
+                />
+              </figure>
+              <figure className="w-full max-w-xl shrink-0 rotate-2 animate-in bg-white p-2 shadow-2xl delay-700 duration-700 fill-mode-backwards fade-in zoom-in-75 sm:p-3 lg:w-[30rem] lg:mt-8">
+                <Image
+                  src="/fotos/sorpresa2/pareja.jpg"
+                  alt="Abril y Gonza abrazados"
+                  width={1600}
+                  height={900}
+                  unoptimized
+                  className="h-auto w-full"
+                />
+              </figure>
+            </div>
+            {/* La frase aparece debajo de las imágenes, un instante después */}
+            <p className="mt-12 animate-in text-center font-heading text-2xl font-semibold text-balance text-[oklch(0.3_0.1_20)] delay-1000 duration-700 fill-mode-backwards fade-in slide-in-from-bottom-4 md:text-3xl">
+              ¡Nosotros, Mora y tu hermano, también viajamos!
+            </p>
+          </>
         )}
       </div>
     </section>

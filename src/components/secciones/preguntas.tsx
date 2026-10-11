@@ -12,7 +12,7 @@ import { Valija } from "./valija"
 
 export function Preguntas() {
   return (
-    <section id="preguntas" className="papel scroll-mt-16 px-4 py-12 sm:py-16">
+    <section id="preguntas" className="scroll-mt-16 bg-muted px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <TituloSeccion nota="Antes de salir" titulo="¿Cómo prepararse para el finde?" variante="salvia" />
 

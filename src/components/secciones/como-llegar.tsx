@@ -7,7 +7,7 @@ const busqueda = encodeURIComponent("La Negrita Casa de Campo, Azcuénaga, Bueno
 
 export function ComoLlegar() {
   return (
-    <section id="como-llegar" className="scroll-mt-16 bg-muted px-4 py-12 sm:py-16">
+    <section id="como-llegar" className="papel scroll-mt-16 px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <TituloSeccion nota="Rumbo al campo" titulo="¿Cómo llegar?" variante="terracota" />
 
@@ -22,7 +22,7 @@ export function ComoLlegar() {
               Unos 100 km desde CABA: entre 1 h 30 y 2 h en auto.
             </Info>
             <Info icono={<Car />} titulo="El camino">
-              Los últimos tramos son de campo. Si llovió mucho, mejor ir con calma.
+              Los últimos tramos son de campo. Si llovió mucho, mejor ir con calma. También se puede cambiar la reserva para un día de sol.
             </Info>
             <Button asChild size="lg" className="h-12 w-full rounded-full text-base">
               <a

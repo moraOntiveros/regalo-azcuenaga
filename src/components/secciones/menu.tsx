@@ -11,6 +11,7 @@ const links = [
   { href: "#casa", texto: "La casa" },
   { href: "#que-hacer", texto: "Qué hacer" },
   { href: "#donde-comer", texto: "Dónde comer" },
+  { href: "#otros-pueblos", texto: "Qué visitar" },
   { href: "#como-llegar", texto: "Cómo llegar" },
   { href: "#preguntas", texto: "Cómo prepararse" },
 ]

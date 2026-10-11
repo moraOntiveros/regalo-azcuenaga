@@ -1,19 +1,21 @@
+import Image from "next/image"
 import { regalo } from "@/data/regalo"
 
+// Cierre del sitio: la imagen final y la firma, sobre el fondo bordo
 export function Pie() {
-  const [n1, n2] = regalo.novios
   const [d1, d2] = regalo.deParteDe
 
   return (
-    <footer className="bg-tierra px-4 py-16 text-center text-crema">
-      <p className="font-hand text-3xl md:text-4xl">¡Que vivan los novios!</p>
-      <p className="mt-2 font-heading text-5xl font-semibold md:text-6xl">
-        {n1} <span className="text-terracota">&</span> {n2}
-      </p>
-      <p className="mx-auto mt-6 max-w-md text-crema/70">
-        Gracias por dejarnos ser parte de este momento. Disfruten mucho este finde, se lo merecen.
-      </p>
-      <p className="mt-8 font-hand text-2xl text-[oklch(0.78_0.09_45)]">
+    <footer className="flex flex-col items-center bg-[oklch(0.3_0.1_20)] px-4 py-12 sm:py-16">
+      <Image
+        src="/fotos/final/thats-all-folks.webp"
+        alt="Bugs Bunny: That's all folks!"
+        width={512}
+        height={512}
+        unoptimized
+        className="size-56 sm:size-72"
+      />
+      <p className="mt-4 text-center font-hand text-3xl text-[oklch(0.78_0.09_45)] md:text-4xl">
         Con amor, {d1} y {d2} ♥
       </p>
     </footer>
